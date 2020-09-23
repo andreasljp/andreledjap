@@ -1,0 +1,185 @@
+/*trik akalin posisi footer pada posisi fixednya*/
+/*---------------------------------------------------------------------*/
+html {
+	/*buat naik satu dimensi*/
+	position: relative;
+}
+
+body {
+	/*marginya samakan denga tinggi footerna*/
+	margin-bottom: 80px;
+
+	/*menambah jarak antara navbar dan konten dibawahnya*/
+	margin-top: 50px;
+}
+/*-----------------------------------------------------------------*/
+
+/*atur jarak kontak dengan footer biar tidak dempet*/
+.kontak {
+	min-height: 800px;
+}
+
+
+
+
+
+.jumbotron {
+	height: 70%;
+	width: 100%;
+	background-image: url(../img/portofolio/bgjumbo.png);
+/*membuat background diam saat discroll*/
+	background-attachment: fixed;
+/*background memenuhi ukuran jumbotronya*/
+	background-size: 145%;
+	background-position: 0 -1px;
+	color: #eaeaeaea;
+	/*membuat objek jumbotron tersembunyi saaat di scrol dengan efek paralax*/
+	overflow: hidden;
+}
+
+
+.jumbotron h1, .jumbotron p {
+	text-shadow: 1px 1px 10px blue;
+}
+
+
+.jumbotron img {
+	width: 20%;
+	border: 5px solid #eaeaea;  
+	box-shadow: 1px 1px 10px blue;       
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 992px){
+.jumbotron {
+	height: 50%;
+	width: 100%;
+	background-image: url(../img/portofolio/bgjumbo.png);
+/*membuat background diam saat discroll*/
+	background-attachment: fixed;
+/*background memenuhi ukuran jumbotronya*/
+	background-size: cover;
+	background-position: 0 -30px;
+	color: #eaeaeaea;
+	/*membuat objek jumbotron tersembunyi saaat di scrol dengan efek paralax*/
+	overflow: hidden;
+}
+
+
+.jumbotron h1, .jumbotron p {
+	text-shadow: 1px 1px 10px blue;
+}
+
+
+.jumbotron img {
+	width: 10%;
+	border: 5px solid #eaeaea;  
+	box-shadow: 1px 1px 10px blue;       
+}
+
+li:hover::after {
+	content: '';
+	display: block;
+	border-bottom: 3px solid blue;
+	width: 50%;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-top: -8px;
+}
+
+
+
+}
+
+}
+/*akhir jumbtron*/
+
+
+
+
+
+
+
+/*mengatur panjang dan tebal garis bawah*/
+hr {
+	width: 250px;
+	border-top: 2px solid#666;
+}
+
+/*mengatur jarak antar tiap section*/
+
+section {
+	min-height: 600px;
+}
+
+.pKiri, .pKanan {
+	opacity: 0;
+	transform: translate(-50px,0);
+	transition: 1s;
+	text-align: justify;
+}
+
+.pKanan {
+	transform: translate(50px,0);
+}
+
+.pKiri.pMuncul,.pKanan.pMuncul {
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+
+
+
+.portfolio {
+	background-color: #eee;
+
+}
+
+
+/*manipulasi elemen port folio untuk menjalanakn paralax leanding objek*/
+/*megnhilangkan dahulu thumbnailnya*/
+.portfolio .thumbnail {
+	opacity: 0;
+	transform: translate(0, -40px);
+	transition: .8s;
+}
+
+/*membuat kelas baru untuk thumbnail yang akan di panggil dari js pada ketinggian tertentu saat di sccroll*/
+.portfolio .thumbnail.muncul {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	background: #333;
+	padding: 9px;
+	
+}
+
+footer p {
+	color: green;
+
+}
+
+/*transparansi navbar*/
+
+.navbar {
+	opacity: .9;
+
+}
+
+h3 {
+	font-family: algerian;
+	font-style: oblique;
+}
